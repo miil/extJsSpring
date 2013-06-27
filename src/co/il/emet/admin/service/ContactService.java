@@ -7,41 +7,41 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import co.il.emet.admin.dao.ContactDAO;
-import co.il.emet.admin.model.Contact;
+import co.il.emet.admin.dao.L7ServiceConfigDAO;
+import co.il.emet.admin.model.L7ServiceConfig;
 
 
 /**
- * Contact Service
+ * L7ServiceConfig Service
  *  
  * @author Oleg B.
  */
 @Service
 public class ContactService {
 	
-	private ContactDAO contactDAO;
+	private L7ServiceConfigDAO l7ServiceConfigDAO;
 
 	/**
 	 * Get all contacts
 	 * @return
 	 */
 	@Transactional(readOnly=true)
-	public List<Contact> getContactList(int start, int limit){
+	public List<L7ServiceConfig> getContactList(int start, int limit){
 		
-		return contactDAO.getContacts(start, limit);
+		return l7ServiceConfigDAO.getContacts(start, limit);
 	}
 	
 	/**
-	 * Create new Contact/Contacts
+	 * Create new L7ServiceConfig/Contacts
 	 * @param data - json data from request
 	 * @return created contacts
 	 */
 	@Transactional
-	public List<Contact> create(Contact contact){
+	public List<L7ServiceConfig> create(L7ServiceConfig l7ServiceConfig){
 		
-        List<Contact> newContacts = new ArrayList<Contact>();
+        List<L7ServiceConfig> newContacts = new ArrayList<L7ServiceConfig>();
 		
-		newContacts.add(contactDAO.saveContact(contact));
+		newContacts.add(l7ServiceConfigDAO.saveContact(l7ServiceConfig));
 		
 		return newContacts;
 	}
@@ -53,23 +53,23 @@ public class ContactService {
 	 * @return updated contacts
 	 */
 	@Transactional
-	public List<Contact> update(Contact contact){
+	public List<L7ServiceConfig> update(L7ServiceConfig l7ServiceConfig){
 		
-		List<Contact> returnContacts = new ArrayList<Contact>();
+		List<L7ServiceConfig> returnContacts = new ArrayList<L7ServiceConfig>();
 		
-		returnContacts.add(contactDAO.saveContact(contact));
+		returnContacts.add(l7ServiceConfigDAO.saveContact(l7ServiceConfig));
 		
 		return returnContacts;
 	}
 	
 	/**
 	 * Delete contact/contacts
-	 * @param contact - json data from request
+	 * @param l7ServiceConfig - json data from request
 	 */
 	@Transactional
-	public void delete(Contact contact){
+	public void delete(L7ServiceConfig l7ServiceConfig){
 		
-		contactDAO.deleteContact(contact.getId());
+		l7ServiceConfigDAO.deleteContact(l7ServiceConfig.getId());
 	}
 	
 	/**
@@ -79,16 +79,16 @@ public class ContactService {
 	 */
 	public int getTotalContacts(){
 
-		return contactDAO.getTotalContacts();
+		return l7ServiceConfigDAO.getTotalContacts();
 	}
 
 	/**
 	 * Spring use - DI
-	 * @param contactDAO
+	 * @param l7ServiceConfigDAO
 	 */
 	@Autowired
-	public void setContactDAO(ContactDAO contactDAO) {
-		this.contactDAO = contactDAO;
+	public void setContactDAO(L7ServiceConfigDAO l7ServiceConfigDAO) {
+		this.l7ServiceConfigDAO = l7ServiceConfigDAO;
 	}
 	
 }

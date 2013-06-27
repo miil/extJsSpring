@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import co.il.emet.admin.model.Contact;
-import co.il.emet.admin.model.ContactWrapper;
+import co.il.emet.admin.model.L7ServiceConfig;
+import co.il.emet.admin.model.L7ServiceConfigWrapper;
 import co.il.emet.admin.service.ContactService;
 import co.il.emet.admin.util.ExtJSReturn;
 
@@ -38,12 +38,12 @@ public class ContactController {
 
 		try {
 
-			List<Contact> contacts = contactService
+			List<L7ServiceConfig> l7ServiceConfigs = contactService
 					.getContactList(start, limit);
 
 			int total = contactService.getTotalContacts();
 
-			return ExtJSReturn.mapOK(contacts, total);
+			return ExtJSReturn.mapOK(l7ServiceConfigs, total);
 
 		} catch (Exception e) {
 
@@ -54,14 +54,14 @@ public class ContactController {
 
 	@RequestMapping(value = "/contact/create.action")
 	public @ResponseBody
-	Map<String, ? extends Object> create(@RequestBody ContactWrapper data)
+	Map<String, ? extends Object> create(@RequestBody L7ServiceConfigWrapper data)
 			throws Exception {
 
 		try {
 
-			List<Contact> contacts = contactService.create(data.getData());
+			List<L7ServiceConfig> l7ServiceConfigs = contactService.create(data.getData());
 
-			return ExtJSReturn.mapOK(contacts);
+			return ExtJSReturn.mapOK(l7ServiceConfigs);
 
 		} catch (Exception e) {
 
@@ -71,13 +71,13 @@ public class ContactController {
 
 	@RequestMapping(value = "/contact/update.action")
 	public @ResponseBody
-	Map<String, ? extends Object> update(@RequestBody ContactWrapper data)
+	Map<String, ? extends Object> update(@RequestBody L7ServiceConfigWrapper data)
 			throws Exception {
 		try {
 
-			List<Contact> contacts = contactService.update(data.getData());
+			List<L7ServiceConfig> l7ServiceConfigs = contactService.update(data.getData());
 
-			return ExtJSReturn.mapOK(contacts);
+			return ExtJSReturn.mapOK(l7ServiceConfigs);
 
 		} catch (Exception e) {
 
@@ -87,7 +87,7 @@ public class ContactController {
 
 	@RequestMapping(value = "/contact/delete.action")
 	public @ResponseBody
-	Map<String, ? extends Object> delete(@RequestBody ContactWrapper data)
+	Map<String, ? extends Object> delete(@RequestBody L7ServiceConfigWrapper data)
 			throws Exception {
 
 		try {

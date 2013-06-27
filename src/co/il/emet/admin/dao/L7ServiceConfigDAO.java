@@ -9,15 +9,15 @@ import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
-import co.il.emet.admin.model.Contact;
+import co.il.emet.admin.model.L7ServiceConfig;
 
 /**
- * Contact DAO class.
+ * L7ServiceConfig DAO class.
  * 
  * @author Oleg B.
  */
 @Repository
-public class ContactDAO {
+public class L7ServiceConfigDAO {
 
 	private HibernateTemplate hibernateTemplate;
 
@@ -32,9 +32,9 @@ public class ContactDAO {
 	 * @return list of all contacts
 	 */
 	@SuppressWarnings("unchecked")
-	public List<Contact> getContacts(int start, int limit) {
+	public List<L7ServiceConfig> getContacts(int start, int limit) {
 
-		DetachedCriteria criteria = DetachedCriteria.forClass(Contact.class);
+		DetachedCriteria criteria = DetachedCriteria.forClass(L7ServiceConfig.class);
 
 		return hibernateTemplate.findByCriteria(criteria, start, limit);
 	}
@@ -45,19 +45,19 @@ public class ContactDAO {
 	 * @param id
 	 */
 	public void deleteContact(int id) {
-		Object record = hibernateTemplate.load(Contact.class, id);
+		Object record = hibernateTemplate.load(L7ServiceConfig.class, id);
 		hibernateTemplate.delete(record);
 	}
 
 	/**
-	 * Create a new Contact on the database or Update contact
+	 * Create a new L7ServiceConfig on the database or Update contact
 	 * 
-	 * @param contact
+	 * @param l7ServiceConfig
 	 * @return contact added or updated in DB
 	 */
-	public Contact saveContact(Contact contact) {
-		hibernateTemplate.saveOrUpdate(contact);
-		return contact;
+	public L7ServiceConfig saveContact(L7ServiceConfig l7ServiceConfig) {
+		hibernateTemplate.saveOrUpdate(l7ServiceConfig);
+		return l7ServiceConfig;
 	}
 
 	/**
@@ -67,7 +67,7 @@ public class ContactDAO {
 	 */
 	public int getTotalContacts() {
 		return DataAccessUtils.intResult(hibernateTemplate
-				.find("SELECT COUNT(*) FROM Contact"));
+				.find("SELECT COUNT(*) FROM L7ServiceConfig"));
 	}
 
 }

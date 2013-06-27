@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Component;
 
-import co.il.emet.admin.model.Contact;
+import co.il.emet.admin.model.L7ServiceConfig;
 
 
 /**
@@ -26,14 +26,14 @@ public class ExtJSReturn {
 
 	/**
 	 * Generates modelMap to return in the modelAndView
-	 * @param contacts
+	 * @param l7ServiceConfigs
 	 * @return
 	 */
-	public static Map<String,Object> mapOK(List<Contact> contacts){
+	public static Map<String,Object> mapOK(List<L7ServiceConfig> l7ServiceConfigs){
 		
 		Map<String,Object> modelMap = new HashMap<String,Object>(3);
-		modelMap.put("total", contacts.size());
-		modelMap.put("data", contacts);
+		modelMap.put("total", l7ServiceConfigs.size());
+		modelMap.put("data", l7ServiceConfigs);
 		modelMap.put("success", true);
 		
 		return modelMap;
@@ -41,14 +41,14 @@ public class ExtJSReturn {
 	
 	/**
 	 * Generates modelMap to return in the modelAndView
-	 * @param contacts
+	 * @param l7ServiceConfigs
 	 * @return
 	 */
-	public static Map<String,Object> mapOK(List<Contact> contacts, int total){
+	public static Map<String,Object> mapOK(List<L7ServiceConfig> l7ServiceConfigs, int total){
 		
 		Map<String,Object> modelMap = new HashMap<String,Object>(3);
 		modelMap.put("total", total);
-		modelMap.put("data", contacts);
+		modelMap.put("data", l7ServiceConfigs);
 		modelMap.put("success", true);
 		
 		return modelMap;

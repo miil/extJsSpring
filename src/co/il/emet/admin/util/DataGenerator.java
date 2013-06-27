@@ -18,12 +18,12 @@ public class DataGenerator {
 		
 		StringBuffer sb;
 		
-		String s1 = "insert into CONTACT (CONTACT_NAME, CONTACT_PHONE, CONTACT_EMAIL) values ('Contact";
+		String s1 = "insert into CONTACT (CONTACT_NAME, CONTACT_PHONE, CONTACT_EMAIL) values ('L7ServiceConfig";
 		String s2 = "', '";
 		String s3 = "(000) 000-0000";
 		String s4 = "@braziljs.com.br";
 		String s5 = "');";
-		String s6 = "Contact";
+		String s6 = "L7ServiceConfig";
 		
 		for (int i=101; i<200; i++){
 			sb = new StringBuffer();
