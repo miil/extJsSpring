@@ -10,16 +10,11 @@ import co.il.emet.admin.model.L7ServiceConfig;
 
 
 /**
+ * 
  * Util class, returns a Map in the format Ext JS expects
+ *
+ * @author Oleg B.
  * 
- * Sample project presented at BrazilJS
- * Brazilian JavaScript Conference
- * Fortaleza - Ceará - 13-14 May 2011
- * http://braziljs.com.br/2011
- * 
- * @author Loiane Groner
- * http://loianegroner.com (English)
- * http://loiane.com (Portuguese)
  */
 @Component
 public class ExtJSReturn {

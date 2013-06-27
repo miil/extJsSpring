@@ -3,24 +3,21 @@ package co.il.emet.admin.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.codehaus.jackson.annotate.JsonAutoDetect;
-import org.hibernate.annotations.IndexColumn;
 
 /**
  * 
  * @author Oleg B.
  *
  */
-@JsonAutoDetect
-@Entity
-@Table(name="CC_OLEG")
-public class L7ServiceConfig {
-//  Oracle demo for seq. like auto_incrematal in MySql  ///////////	
+//@JsonAutoDetect
+//@Entity
+//@Table(name="CONTACT")
+public class L7ServiceConfigSave {
+//  Oracle demo for seq. auto_incrematal in MySql  ///////////	
 //	@Id
 //	@SequenceGenerator(name = "SOMETHING_SEQ")
 //	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SOMETHING_SEQ")
@@ -29,8 +26,7 @@ public class L7ServiceConfig {
 ////////////////////////////////////////////////////////////////	
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO, generator = "my_entity_seq_gen")
-	@SequenceGenerator(name = "my_entity_seq_gen", sequenceName = "L7_SERVICE_CONFIG_ID_SEQ")
+	@GeneratedValue
 	@Column(name="CONTACT_ID")
 	private int id;
 	

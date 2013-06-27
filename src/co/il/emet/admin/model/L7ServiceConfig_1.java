@@ -14,8 +14,8 @@ import org.codehaus.jackson.annotate.JsonAutoDetect;
  *
  */
 @JsonAutoDetect
-@Entity
-@Table(name="L7_SERVICE_CONFIG")
+//@Entity
+//@Table(name="L7_SERVICE_CONFIG")
 public class L7ServiceConfig_1 {
 	
 	@Id
