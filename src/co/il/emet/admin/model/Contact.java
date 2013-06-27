@@ -17,6 +17,13 @@ import org.codehaus.jackson.annotate.JsonAutoDetect;
 @Entity
 @Table(name="CONTACT")
 public class Contact {
+//  Oracle demo for seq. auto_incrematal in MySql  ///////////	
+//	@Id
+//	@SequenceGenerator(name = "SOMETHING_SEQ")
+//	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SOMETHING_SEQ")
+//	@Column(name = "SOMETHING", nullable = false)
+//	private Long id;
+////////////////////////////////////////////////////////////////	
 	
 	@Id
 	@GeneratedValue

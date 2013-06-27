@@ -13,15 +13,8 @@ import co.il.emet.admin.model.Contact;
 
 /**
  * Contact Service
- * 
- * Sample project presented at BrazilJS
- * Brazilian JavaScript Conference
- * Fortaleza - Ceará - 13-14 May 2011
- * http://braziljs.com.br/2011
- * 
- * @author Loiane Groner
- * http://loianegroner.com (English)
- * http://loiane.com (Portuguese)
+ *  
+ * @author Oleg B.
  */
 @Service
 public class ContactService {
